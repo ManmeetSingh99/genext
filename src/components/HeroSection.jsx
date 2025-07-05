@@ -1,11 +1,7 @@
 // components/Hero.jsx
 import React, { useState, useEffect, useRef } from "react";
 import carousel1 from "../assets/Frame 153.png";
-import carousel2 from "../assets/Frame 151.png";
 import carousel3 from "../assets/Frame 150.png";
-import carousel4 from "../assets/Frame 149.png";
-import carousel5 from "../assets/Frame 148.png";
-import carousel6 from "../assets/Frame 147.png";
 import carousel7 from "../assets/Frame 146.png";
 import carousel8 from "../assets/Frame 145.png";
 import carousel9 from "../assets/Frame 144.png";
@@ -20,32 +16,8 @@ const slides = [
     buttonText: "Get Started",
   },
   {
-    id: 2,
-    image: carousel2,
-    heading: "GeNext – Your Reliable Beverage Partner",
-    buttonText: "Get Started",
-  },
-  {
     id: 3,
     image: carousel3,
-    heading: "GeNext – Your Reliable Beverage Partner",
-    buttonText: "Get Started",
-  },
-  {
-    id: 4,
-    image: carousel4,
-    heading: "GeNext – Your Reliable Beverage Partner",
-    buttonText: "Get Started",
-  },
-  {
-    id: 5,
-    image: carousel5,
-    heading: "GeNext – Your Reliable Beverage Partner",
-    buttonText: "Get Started",
-  },
-  {
-    id: 6,
-    image: carousel6,
     heading: "GeNext – Your Reliable Beverage Partner",
     buttonText: "Get Started",
   },
