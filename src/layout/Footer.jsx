@@ -21,7 +21,7 @@ const Footer = () => {
             alt="GeNext Logo"
             className="mb-4 object-contain"
           />
-          <p className="text-sm font-medium">
+          <p className="text-sm font-medium font-[Poppins]">
             GeNext Beverages connects global suppliers with businesses through
             premium alcoholic and non-alcoholic drinks, driven by quality,
             reliability, and innovation.
@@ -37,26 +37,26 @@ const Footer = () => {
               placeholder="Enter Your Email"
               className="input input-sm rounded-2xl ml-[-5px] border-0 w-full max-w-2xl text-white  bg-[#242424] placeholder:text-white"
             />
-            <button className="btn bg-[#A175FE] rounded-2xl px-10 btn-sm border-0 text-white hover:bg-purple-700">
+            <button className="btn bg-[#A175FE] rounded-2xl px-10 btn-sm border-0 text-white font-[Poppins] hover:bg-purple-700">
               Get in Touch
             </button>
           </div>
 
           {/* Links */}
           <div className="flex md:flex-row gap-8 md:gap-30 font-medium text-sm">
-            <div className="flex flex-col space-y-2 text-xs">
+            <div className="flex flex-col space-y-2 text-xs font-[Poppins]">
               <p>GENEXT DELIVERY</p>
               <p>BECOME A CUSTOMER</p>
               <p>ORDER ONLINE</p>
               <p>HORECA WHOLESALER</p>
             </div>
-            <div className="flex flex-col space-y-2 text-xs">
+            <div className="flex flex-col space-y-2 text-xs font-[Poppins]">
               <p>DRINKS SERVICE</p>
               <p>WHOLESALER</p>
               <p>BEER MERCHANT</p>
               <p>BEER BARRELS</p>
             </div>
-            <div className="space-y-2 text-xs">
+            <div className="space-y-2 text-xs font-[Poppins]">
               <div className="flex items-center gap-2">
                 <FaPhoneAlt />
                 <span>123456789</span>

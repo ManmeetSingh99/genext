@@ -45,7 +45,7 @@ export default function FAQSection() {
 
   return (
     <div className="w-full bg-white py-6">
-      <h2 className="text-3xl lg:text-4xl font-bold text-center md:mb-5 lg:mb-10">
+      <h2 className="text-3xl lg:text-4xl font-bold text-center md:mb-5 lg:mb-10 font-[Playfair_Display]">
         Frequently Asked Questions
       </h2>
 
@@ -70,7 +70,7 @@ export default function FAQSection() {
                 onClick={() => toggleFAQ(index)}
                 className="flex items-center justify-between w-full text-left cursor-pointer"
               >
-                <span className="font-semibold text-[#585858] text-base md:text-lg cursor-pointercursor-pointer">
+                <span className="font-semibold text-[#585858] text-base md:text-lg cursor-pointercursor-pointer font-[Poppins]">
                   {item.question}
                 </span>
                 <FaChevronDown
@@ -80,7 +80,7 @@ export default function FAQSection() {
                 />
               </button>
               {openIndex === index && (
-                <div className="mt-3 text-sm text-gray-700">{item.answer}</div>
+                <div className="mt-3 text-sm text-gray-700 font-[Poppins]">{item.answer}</div>
               )}
             </div>
           ))}
@@ -90,8 +90,8 @@ export default function FAQSection() {
       <div className="relative bg-[#B388F9] w-full h-[82px] md:h-[139px] lg:h-[195px] mt-10 flex items-center justify-between">
         {/* Text Content */}
         <div className="z-10 text-white pl-2 md:pl-16 lg:pl-32">
-          <p className="text-sm md:text-3xl font-medium">Supplying sips.</p>
-          <p className="text-lg md:text-3xl lg:text-4xl font-bold">
+          <p className="text-sm md:text-3xl font-medium font-[Playfair_Display]">Supplying sips.</p>
+          <p className="text-lg md:text-3xl lg:text-4xl font-bold font-[Playfair_Display]">
             Delivering satisfaction.
           </p>
         </div>

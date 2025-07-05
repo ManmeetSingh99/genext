@@ -36,19 +36,22 @@ const products = [
 export default function ProductsSection() {
   return (
     <div className="mt-6 px-4 md:px-10 max-w-screen-xl mx-auto">
-      <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">
+      <h2 className="text-2xl md:text-5xl font-bold text-center mb-10 font-[Playfair_Display]">
         Wide Range of Products
       </h2>
 
-      <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-6 font-[Poppins]">
         {products.map((item, idx) => (
-          <div key={idx} className="flex flex-col items-center text-center">
+          <div
+            key={idx}
+            className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center text-center group cursor-pointer hover:scale-[1.03] hover:bg-[#f8f8f8]"
+          >
             <img
               src={item.image}
               alt={item.label}
-              className="w-20 h-20 md:w-28 md:h-28 lg:w-38 lg:h-38"
+              className="w-20 h-20 md:w-28 md:h-28 mb-3 lg:w-38 lg:h-38 transition-transform duration-300 group-hover:scale-105"
             />
-            <p className="text-xs sm:text-sm md:text-base font-semibold mt-2">
+            <p className="text-xs sm:text-sm md:text-base text-[#39434d] font-semibold mt-2">
               {item.label}
             </p>
           </div>
@@ -56,7 +59,7 @@ export default function ProductsSection() {
       </div>
 
       <div className="flex justify-center mt-6">
-        <button className="btn btn-outline rounded-full bg-[#201f22] text-white hover:bg-white hover:text-black px-6 sm:px-10 text-xs sm:text-sm">
+        <button className="btn btn-outline rounded-full bg-[#39434d] font-[Poppins] hover:text-#39434d px-6 sm:px-10 text-xs text-white hover:bg-white hover:text-[#39434d] transition-all duration-300 hover:scale-105 sm:text-sm">
           Request Pricelist
         </button>
       </div>

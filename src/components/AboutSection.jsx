@@ -29,8 +29,8 @@ const cards = [
 
 export default function AboutSection() {
   return (
-    <div className="bg-white w-full mt-10">
-      <h2 className="text-3xl md:text-3xl lg:text-4xl font-bold text-center text-black mb-6">
+    <div className="bg-white w-full mt-10 font-[Poppins]">
+      <h2 className="text-3xl md:text-3xl lg:text-4xl font-bold text-center text-black mb-6 font-[Playfair_Display]">
         Why Choose <span className="text-[#9D6EFF]">GeNext</span>?
       </h2>
 
@@ -39,7 +39,7 @@ export default function AboutSection() {
         {cards.map((card, idx) => (
           <div
             key={idx}
-            className="flex flex-row items-center text-left w-[80%] md:w-[60%] bg-white rounded-lg p-4 lg:flex-row lg:text-center lg:flex-1"
+            className="flex flex-row items-center text-left w-[80%] md:w-[60%] bg-white rounded-lg p-4 lg:flex-row lg:text-center lg:flex-1 hover:shadow-lg hover:scale-105 transition-all duration-300 hover:bg-gray-50 cursor-pointer"
           >
             <div
               className={`rounded-full mr-2 md:mr-4 lg:mr-4  lg:mb-4 flex-shrink-0 ${
@@ -68,15 +68,15 @@ export default function AboutSection() {
           className="w-[60%] md:w-[40%] lg:w-[38%] rounded-lg object-cover"
         />
         <div className="text-center md:text-left">
-          <h3 className="text-3xl font-bold text-black mb-4">
+          <h3 className="text-3xl font-bold text-black mb-4 font-[Playfair_Display]">
             About GeNext Beverages
           </h3>
-          <p className="text-gray-700 text-lg mb-6 font-medium leading-relaxed max-w-xl">
+          <p className="text-gray-700 text-lg mb-6 font-medium leading-relaxed max-w-xl font-[Inter]">
             At GeNext Beverages, we specialize in sourcing, trading, and
             distributing a diverse portfolio of premium alcoholic and
             non-alcoholic beverages.
           </p>
-          <button className="btn bg-black text-white hover:bg-[#8847E6] hover:text-white">
+          <button className="btn bg-black text-white hover:bg-[#8847E6] hover:text-white font-[Inter]">
             Get in Touch
           </button>
         </div>

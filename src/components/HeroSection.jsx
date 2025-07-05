@@ -123,15 +123,13 @@ export default function HeroSection() {
 
   return (
     <div
-      className="w-full relative"
+      className="w-full relative font-[Inter]"
       style={{ height: "85vh" }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {" "}
-      {/* Adjust mt if navbar height changes */}
-      <div className="carousel w-full ">
+      <div className="carousel w-full">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -145,13 +143,13 @@ export default function HeroSection() {
               className="w-full h-full object-cover"
               alt={`slide-${index}`}
             />
-            <div className="absolute inset-0  bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
-              <h1 className="text-2xl lg:text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg w-[80%] md:w-[60%]">
+            <div className="absolute inset-0 bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
+              <h1 className="text-2xl lg:text-6xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg w-[80%] md:w-[60%] font-[Playfair_Display]">
                 {slide.heading}
               </h1>
               <button
                 href="#"
-                className="btn btn-outline border-white font-bold text-white hover:bg-white border-2 hover:text-black px-20 rounded-full"
+                className="btn btn-outline border-white font-bold text-white border-2 px-20 rounded-full bg-transparent hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
               >
                 {slide.buttonText}
               </button>

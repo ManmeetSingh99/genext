@@ -11,7 +11,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="navbar shadow-sm bg-transparent px-4 py-2">
+    <div className="navbar shadow-sm bg-transparent px-4 py-2 font-[Inter]">
       {/* Logo */}
       <div className="navbar-start">
         <img src={logoImage} alt="Logo" className="h-15 w-auto lg:ml-4" />
