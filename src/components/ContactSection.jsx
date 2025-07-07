@@ -5,7 +5,11 @@ import stony from "../assets/contact/stony_cape.png";
 import sula from "../assets/contact/dindori.png";
 import perla from "../assets/contact/perla.png";
 import contactBg from "../assets/contact/contact.svg";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
 const contactCards = [
   {
     icon: (
@@ -38,26 +42,63 @@ export default function ContactSection() {
   return (
     <div className="w-full mt-8 lg:mt-10">
       {/* Top Purple Banner */}
-      <div className="bg-[#9D6EFF] rounded-3xl p-6 md:p-8 w-[100%] md:w-[75%] lg:w-[80%] mx-auto text-white text-center">
-        <h2 className="text-xl md:text-2xl lg:text-4xl text-left font-bold mb-2 lg:mb-6 font-[Playfair_Display]">
+      <div className="bg-[#9D6EFF] rounded-3xl p-6 md:p-8 w-[80%] md:w-[70%] lg:w-[80%] mx-auto text-white text-center">
+        <h2 className="text-md md:text-2xl lg:text-4xl text-left font-bold mb-2 lg:mb-6 font-[Playfair_Display]">
           Rare to Find? Easy with GeNext.
         </h2>
-        <div className="grid grid-cols-4 gap-4 justify-items-center">
-          {/* Example bottles — Replace with your actual images */}
+        {/* Static Images for lg and above */}
+        <div className="hidden lg:grid grid-cols-4 gap-4 justify-items-center">
           {drinkImages.map((drink, i) => (
             <img
               key={i}
               src={drink.src}
-              alt={drink}
+              alt={drink.alt}
               className="w-35 h-35 md:w-40 lg:w-50 md:h-40 lg:h-50 object-contain rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 bg-[#CAB1FF]"
             />
           ))}
+        </div>
+
+        {/* Carousel for md and below */}
+        <div className="block lg:hidden">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={20}
+            slidesPerView={2}
+            loop={true}
+            speed={5000}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: true,
+            }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            breakpoints={{
+              320: { slidesPerView: 2.5 },
+              480: { slidesPerView: 2 },
+              768: { slidesPerView: 2.5 },
+            }}
+            className="mySwiper"
+          >
+            {drinkImages.map((drink, i) => (
+              <SwiperSlide key={i}>
+                <img
+                  src={drink.src}
+                  alt={drink.alt}
+                  className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 bg-[#CAB1FF] mx-auto"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
 
       {/* Info + Icons Section */}
       <div className="text-center my-6">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#39434d]">Easy Order Online</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-[#39434d]">
+          Easy Order Online
+        </h3>
 
         <div className="flex flex-row justify-center gap-3  mt-8">
           {contactCards.map((card, idx) => (
@@ -66,7 +107,9 @@ export default function ContactSection() {
               className="flex flex-col md:w-[25%] lg:w-[20%] gap-4 md:flex-row items-center justify-center"
             >
               <div className="rounded-full">{card.icon}</div>
-              <div className="font-bold text-sm md:text-lg text-[#39434d]">{card.title}</div>
+              <div className="font-bold text-sm md:text-lg text-[#39434d]">
+                {card.title}
+              </div>
               <div className="text-sm text-gray-700">{card.subtitle}</div>
             </div>
           ))}
