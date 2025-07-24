@@ -95,7 +95,7 @@ export default function HeroSection() {
 
   return (
     <div
-      className="w-full relative font-[Inter]"
+      className="w-full relative font-[Inter] mt-19"
       style={{ height: "85vh" }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}

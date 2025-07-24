@@ -1,6 +1,7 @@
 import React from "react";
 import { FaTruck, FaGlobe } from "react-icons/fa";
 import { AiFillDollarCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import genextCardImg from "../assets/about.svg"; // Replace with your image path
 
 const cards = [
@@ -76,9 +77,11 @@ export default function AboutSection() {
             distributing a diverse portfolio of premium alcoholic and
             non-alcoholic beverages.
           </p>
-          <button className="btn bg-black text-white hover:bg-[#8847E6] hover:text-white font-[Inter]">
-            Get in Touch
-          </button>
+          <Link to="/contact">
+            <button className="btn bg-black text-white hover:bg-[#8847E6] hover:text-white font-[Inter]">
+              Get in Touch
+            </button>
+          </Link>
         </div>
       </div>
     </div>

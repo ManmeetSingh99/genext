@@ -9,6 +9,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -37,9 +38,11 @@ const Footer = () => {
               placeholder="Enter Your Email"
               className="input input-sm rounded-2xl ml-[-5px] border-0 w-full max-w-2xl text-white  bg-[#242424] placeholder:text-white"
             />
-            <button className="btn bg-[#A175FE] rounded-2xl px-10 btn-sm border-0 text-white font-[Poppins] hover:bg-purple-700">
-              Get in Touch
-            </button>
+            <Link to="/contact">
+              <button className="btn bg-[#A175FE] rounded-2xl px-10 btn-sm border-0 text-white font-[Poppins] hover:bg-purple-700">
+                Get in Touch
+              </button>
+            </Link>
           </div>
 
           {/* Links */}
@@ -86,8 +89,7 @@ const Footer = () => {
 
       {/* Bottom Line */}
       <div className="text-xs text-center text-gray-400 mt-8 border-t border-gray-700 pt-4">
-        © 2025 GeNext B.V. – Beverage Delivery Services | Privacy policy | Terms
-        of Use | Cookie settings
+        © 2025 GeNext B.V. – Beverage Delivery Services | <Link to="/privacy-policy">Privacy policy</Link> | <Link to="/terms-of-use">Terms of Use</Link> | <Link to="/cookie-settings">Cookie settings</Link>
       </div>
     </footer>
   );

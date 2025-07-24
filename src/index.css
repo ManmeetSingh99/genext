@@ -9,3 +9,14 @@
   --font-body: "Inter", sans-serif;
   --font-alt: "Poppins", sans-serif;
 }
+.glow-corner {
+  background: radial-gradient(
+    closest-side at 50% 50%,
+    rgba(168, 85, 247, 1),
+    transparent 100%
+  ) !important;
+  /* clip-path:ellipse(50% 50%) !important; */
+}
+html {
+  scroll-behavior: smooth !important;
+}
