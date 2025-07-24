@@ -65,29 +65,43 @@ export const HomePage = () => {
     </MainLayout>
   );
 };
-function App() {
+
+function AppRoutes() {
+  const location = useLocation();
+
   useEffect(() => {
     const hash = window.location.hash;
-    console.log("Current hash:", hash);
     if (hash) {
       const id = hash.replace("#", "");
       setTimeout(() => {
         const element = document.getElementById(id);
-        console.log("Element found:", element);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }
   }, []);
+
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
+
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/contact" element={<ContactUsInner />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-use" element={<TermsOfUse />} />
+    </Routes>
+  );
+}
+
+function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/contact" element={<ContactUsInner />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-use" element={<TermsOfUse />} />
-      </Routes>
+      <AppRoutes />
     </Router>
   );
 }
