@@ -5,16 +5,16 @@ import energy from "../assets/products/energy.png";
 import water from "../assets/products/water.png";
 import juice from "../assets/products/juice.png";
 import dairy from "../assets/products/dairy.png";
-import belgium from "../assets/products/belgiumbeers.png";
+import belgian from "../assets/products/belgiumbeers.png";
 import pols from "../assets/products/polisbeers.png";
 import indian from "../assets/products/indianbeers.png";
 import international from "../assets/products/internationalbeers.png";
 import wine from "../assets/products/wine.png";
 import whiskey from "../assets/products/whiskey.png";
-import vodka from "../assets/products/vodka.png";
-import rum from "../assets/products/rum.png";
-import gin from "../assets/products/gin.png";
+import drum from "../assets/products/bergenbeer.png";
+import tonic from "../assets/products/Schweppes.png";
 import { Link } from "react-router-dom";
+import { FiClipboard } from "react-icons/fi"; // 📋 Clipboard icon
 
 const products = [
   { image: softDrink, label: "Soft Drinks" },
@@ -23,15 +23,14 @@ const products = [
   { image: water, label: "Water" },
   { image: juice, label: "Juice" },
   { image: dairy, label: "Dairy" },
-  { image: belgium, label: "Belgium Beers" },
-  { image: pols, label: "Pols Beers" },
+  { image: belgian, label: "Belgian Beers" },
+  { image: pols, label: "Polis Beers" },
   { image: indian, label: "Indian Beers" },
   { image: international, label: "International Beers" },
   { image: wine, label: "Wine" },
-  { image: whiskey, label: "Whiskey" },
-  { image: vodka, label: "Vodka" },
-  { image: rum, label: "Rum" },
-  { image: gin, label: "Gin" },
+  { image: whiskey, label: "Spirits" },
+  { image: tonic, label: "Tonic Water" },
+  { image: drum, label: "Green Bergen" },
 ];
 
 export default function ProductsSection() {
@@ -46,13 +45,25 @@ export default function ProductsSection() {
           {products.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center text-center group cursor-pointer hover:scale-[1.03] hover:bg-[#f8f8f8]"
+              className="rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-4 flex flex-col items-center text-center group cursor-pointer border border-transparent hover:border-[#8847E6] hover:scale-[1.03] 
+      bg-gradient-to-br from-[#f6f1fc] via-[#ece1fc] to-[#e0d0fb]"
             >
-              <img
-                src={item.image}
-                alt={item.label}
-                className="w-20 h-20 md:w-28 md:h-28 mb-3 lg:w-38 lg:h-38 transition-transform duration-300 group-hover:scale-105"
-              />
+              <div className="relative">
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  className={`mb-3 transition-transform duration-300 group-hover:scale-105 
+            ${
+              ["Dairy", "Water", "Ice Tea", "Belgian Beers"].includes(
+                item.label
+              )
+                ? "w-42 h-32 md:w-52 md:h-40"
+                : "w-20 h-20 md:w-28 md:h-28 lg:w-42 lg:h-42"
+            }`}
+                />
+
+              </div>
+
               <p className="text-xs sm:text-sm md:text-base text-[#39434d] font-semibold mt-2">
                 {item.label}
               </p>
@@ -62,8 +73,11 @@ export default function ProductsSection() {
 
         <div className="flex justify-center mt-6">
           <Link to="/contact">
-            <button className="btn btn-outline rounded-full bg-[#39434d] font-[Poppins] hover:text-#39434d px-6 sm:px-10 text-xs text-white hover:bg-white hover:text-[#39434d] transition-all duration-300 hover:scale-105 sm:text-sm">
-              Request Pricelist
+            <button className="btn rounded-full bg-gradient-to-r from-[#8847E6] to-[#2575fc] text-white font-[Poppins] px-6 sm:px-10 text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border-none tracking-wide flex items-center gap-2">
+              <FiClipboard className="text-lg sm:text-xl" />
+              <span className="group-hover:tracking-widest transition-all duration-300">
+                Request Pricelist
+              </span>
             </button>
           </Link>
         </div>

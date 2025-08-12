@@ -3,6 +3,7 @@ import { FaTruck, FaGlobe } from "react-icons/fa";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import genextCardImg from "../assets/about.svg"; // Replace with your image path
+import { FiMail } from "react-icons/fi";
 
 const cards = [
   {
@@ -17,7 +18,7 @@ const cards = [
       <FaGlobe className="text-[#9D6EFF] w-16 h-16 lg:w-20 lg:h-20 text-5xl" />
     ),
     title: "Wide range",
-    desc: "All types of drinks: water, soft drinks, beer & spirits",
+    desc: "All types of Drinks: Water, Soft Drinks, Juice, Beer, Wine & Spirits",
   },
   {
     icon: (
@@ -30,7 +31,7 @@ const cards = [
 
 export default function AboutSection() {
   return (
-    <div className="bg-white w-full mt-10 font-[Poppins]">
+    <div className="bg-white w-full mt-20 font-[Poppins]">
       <h2 className="text-3xl md:text-3xl lg:text-4xl font-bold text-center text-black mb-6 font-[Playfair_Display]">
         Why Choose <span className="text-[#9D6EFF]">GeNext</span>?
       </h2>
@@ -77,11 +78,18 @@ export default function AboutSection() {
             distributing a diverse portfolio of premium alcoholic and
             non-alcoholic beverages.
           </p>
-          <Link to="/contact">
-            <button className="btn bg-black text-white hover:bg-[#8847E6] hover:text-white font-[Inter]">
-              Get in Touch
-            </button>
-          </Link>
+
+          <button
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="btn border border-[#8847E6] bg-black text-white  hover:bg-[#8847E6] hover:text-white font-[Inter] flex items-center justify-center gap-2"
+          >
+            <FiMail className="text-lg" />
+            Get in Touch
+          </button>
         </div>
       </div>
     </div>

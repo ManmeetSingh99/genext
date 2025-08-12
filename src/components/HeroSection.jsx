@@ -4,10 +4,11 @@ import carousel1 from "../assets/Frame 153.png";
 import carousel3 from "../assets/Frame 150.png";
 import carousel7 from "../assets/Frame 146.png";
 import carousel8 from "../assets/Frame 145.png";
-import carousel9 from "../assets/Frame 144.png";
+import carousel9 from "../assets/coco_cola.png";
 import carousel10 from "../assets/Frame 143.png";
 import carousel11 from "../assets/Frame 142.png";
-
+import carousel4 from "../assets/jupiler.png";
+import carousel12 from "../assets/maes.png";
 const slides = [
   {
     id: 1,
@@ -18,6 +19,12 @@ const slides = [
   {
     id: 3,
     image: carousel3,
+    heading: "GeNext – Your Reliable Beverage Partner",
+    buttonText: "Get Started",
+  },
+  {
+    id: 4,
+    image: carousel4,
     heading: "GeNext – Your Reliable Beverage Partner",
     buttonText: "Get Started",
   },
@@ -48,6 +55,12 @@ const slides = [
   {
     id: 11,
     image: carousel11,
+    heading: "GeNext – Your Reliable Beverage Partner",
+    buttonText: "Get Started",
+  },
+  {
+    id: 12,
+    image: carousel12,
     heading: "GeNext – Your Reliable Beverage Partner",
     buttonText: "Get Started",
   },
@@ -95,8 +108,8 @@ export default function HeroSection() {
 
   return (
     <div
-      className="w-full relative font-[Inter] mt-19"
-      style={{ height: "85vh" }}
+      className="w-full relative font-[Inter]"
+      style={{ height: "95vh" }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -106,7 +119,7 @@ export default function HeroSection() {
           <div
             key={slide.id}
             id={`slide${index}`}
-            className={`absolute inset-0 w-full h-[88vh] transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-[100vh] transition-opacity duration-1000 ${
               current === index ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
@@ -120,7 +133,12 @@ export default function HeroSection() {
                 {slide.heading}
               </h1>
               <button
-                href="#"
+                onClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                href="#contact"
                 className="btn btn-outline border-white font-bold text-white border-2 px-20 rounded-full bg-transparent hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
               >
                 {slide.buttonText}

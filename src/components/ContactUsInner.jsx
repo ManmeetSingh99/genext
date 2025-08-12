@@ -1,74 +1,86 @@
 import React from "react";
-import bottleImage from "../assets/contact/bottle.png";
-import MainLayout from "../layout/MainLayout";
-import { MdLocalPhone, MdEmail, MdLocationOn } from "react-icons/md";
+import bottleBg from "../assets/contact/bottle_contact.png";
+import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
+import MainLayout from "./../layout/MainLayout";
 
 const ContactUs = () => {
   return (
     <MainLayout>
-      <div className="min-h-[80vh] bg-white flex items-center justify-center p-4 mt-22">
-        <div className="relative bg-white rounded-3xl shadow-2xl border border-purple-200 flex flex-col md:flex-row max-w-6xl w-full overflow-hidden z-10">
-          {/* Left Section: Image + Info */}
-          <div className="md:w-1/2 w-full bg-white flex md:flex-col items-center shadow-lg z-100 justify-center p-6 gap-4">
-            <img
-              src={bottleImage}
-              alt="Bottle"
-              className="w-32 sm:w-40 md:w-3/4 max-w-[250px] hover:scale-110 transition-transform duration-300 object-contain"
-            />
-            <div className="flex flex-col justify-center space-y-4 text-gray-700 w-full px-2 sm:px-4 md:px-6 text-sm sm:text-base">
-              <div className="flex items-center gap-3">
-                <div className="bg-purple-500 p-2 rounded-full">
-                  <MdLocalPhone className="text-white text-xl sm:text-2xl" />
-                </div>
-                <p>+1 254 8547 956</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="bg-purple-500 p-2 rounded-full">
-                  <MdEmail className="text-white text-xl sm:text-2xl" />
-                </div>
-                <p>sachdeva@coin.sin</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="bg-purple-500 p-2 rounded-full">
-                  <MdLocationOn className="text-white text-xl sm:text-2xl" />
-                </div>
-                <p>
-                  3891 Ranchview Dr. Richardson,
-                  <br />
-                  California 62639
-                </p>
+      <div
+        className="min-h-screen flex items-center justify-center px-4 sm:px-0 bg-[#EFD4FF] bg-no-repeat bg-left bg-contain relative"
+        style={{
+          backgroundImage: `url(${bottleBg})`,
+          backgroundSize: "contain",
+          backgroundPosition: "left",
+        }}
+      >
+        {/* Main Absolute Card (slightly shifted right) */}
+        <div className="absolute right-4 sm:right-10 md:right-20 lg:right-16 z-10">
+          <div className="flex flex-col md:flex-row w-[55vw] max-w-5xl bg-white/10 backdrop-blur-lg border-2 border-white/70 rounded-4xl shadow-xl overflow-hidden">
+            {/* Left: Contact Info */}
+            {/* Left: Contact Info */}
+            <div className="md:w-1/2 lg:w-[500px] p-6 sm:p-8 flex flex-col justify-start items-center space-y-6 text-purple-900 bg-white/20">
+              <h2 className="md:text-4xl sm:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-purple-600">
+                Get in Touch !
+              </h2>
+              <div className="space-y-2 w-full">
+                {[
+                  {
+                    icon: MdLocationOn,
+                    text: `Kielsbroek 4/C18, 
+                    2020 Antwerp, Belgium`,
+                  },
+                  {
+                    icon: MdPhone,
+                    text: (
+                      <>
+                        +32 489 409 045 <br /> +32 478 501 069
+                      </>
+                    ),
+                  },
+                  { icon: MdEmail, text: "business@genext.be" },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center space-x-4 p-2 rounded-lg hover:bg-white/10 transition-all duration-300 group cursor-pointer"
+                  >
+                    <div className="bg-white/30 p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <item.icon className="text-3xl text-purple-800" />
+                    </div>
+                    <span className="text-sm sm:text-base whitespace-pre-line">
+                      {item.text}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
 
-          {/* Right Section: Contact Form */}
-          <div className="md:w-1/2 w-full p-6 sm:p-10 bg-gradient-to-br from-white to-purple-200 z-10">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-              Get in Touch
-            </h2>
-            <p className="mb-6 text-sm text-gray-500">
-              Any question or remarks? Let us know!
-            </p>
-
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="input input-bordered w-full"
-              />
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="input input-bordered w-full"
-              />
-              <textarea
-                placeholder="Type your message here"
-                className="textarea textarea-bordered w-full h-32"
-              />
-              <button className="btn bg-black w-full text-white hover:bg-purple-700 ">
-                Submit
-              </button>
-            </form>
+            {/* Right: Contact Form */}
+            <div className="w-full p-6 sm:p-8">
+              <form className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="w-full px-4 py-3 rounded-md bg-[#E4D2F9] text-purple-900 placeholder-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full px-4 py-3 rounded-md bg-[#E4D2F9] text-purple-900 placeholder-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                />
+                <textarea
+                  placeholder="Message"
+                  className="w-full px-4 py-3 rounded-md bg-[#E4D2F9] text-purple-900 placeholder-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                  rows="4"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full cursor-pointer bg-[#A56CF4] hover:bg-[#8e50ec] transition-all text-white font-semibold py-3 rounded-lg shadow-md"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
